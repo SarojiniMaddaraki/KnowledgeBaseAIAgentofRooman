@@ -1,6 +1,7 @@
 streamlit==1.28.0
 sentence-transformers==2.2.2
-pinecone-client==3.0.0
+pinecone==5.0.0
 google-generativeai==0.3.0
 torch==2.0.0
 transformers==4.30.0
+
