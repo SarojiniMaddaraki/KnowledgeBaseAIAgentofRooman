@@ -1,0 +1,150 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-size="28" font-weight="bold" text-anchor="middle" fill="#1e293b">
+    Rooman AI Agent - End-to-End Architecture
+  </text>
+  
+  <!-- User Layer -->
+  <g id="user-layer">
+    <rect x="50" y="80" width="200" height="120" rx="10" fill="#ff6b35" stroke="#e55a28" stroke-width="2"/>
+    <text x="150" y="115" font-size="18" font-weight="bold" text-anchor="middle" fill="white">👤 User</text>
+    <text x="150" y="145" font-size="14" text-anchor="middle" fill="white">Streamlit UI</text>
+    <text x="150" y="165" font-size="12" text-anchor="middle" fill="white">• Login/Signup</text>
+    <text x="150" y="183" font-size="12" text-anchor="middle" fill="white">• Chat Interface</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M 150 200 L 150 250" stroke="#1e293b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="170" y="230" font-size="12" fill="#475569">Query</text>
+  
+  <!-- Frontend Layer -->
+  <g id="frontend">
+    <rect x="50" y="250" width="200" height="140" rx="10" fill="#004e89" stroke="#003d6b" stroke-width="2"/>
+    <text x="150" y="285" font-size="18" font-weight="bold" text-anchor="middle" fill="white">⚙️ Frontend</text>
+    <text x="150" y="310" font-size="14" text-anchor="middle" fill="white">Streamlit App</text>
+    <text x="150" y="335" font-size="12" text-anchor="middle" fill="white">• Session Management</text>
+    <text x="150" y="355" font-size="12" text-anchor="middle" fill="white">• Chat History</text>
+    <text x="150" y="375" font-size="12" text-anchor="middle" fill="white">• Debug Mode</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M 250 320 L 370 320" stroke="#1e293b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="280" y="310" font-size="12" fill="#475569">User Question</text>
+  
+  <!-- RAG Pipeline -->
+  <g id="rag-pipeline">
+    <rect x="370" y="230" width="320" height="280" rx="10" fill="#1a659e" stroke="#134a75" stroke-width="2"/>
+    <text x="530" y="265" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🔄 RAG Pipeline</text>
+    
+    <!-- Step 1: Embedding -->
+    <rect x="390" y="280" width="280" height="50" rx="8" fill="white" stroke="#1a659e" stroke-width="2"/>
+    <text x="530" y="310" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e293b">1️⃣ Query Embedding</text>
+    <text x="410" y="325" font-size="11" fill="#475569">SentenceTransformer (MPNet)</text>
+    
+    <!-- Step 2: Vector Search -->
+    <rect x="390" y="345" width="280" height="50" rx="8" fill="white" stroke="#1a659e" stroke-width="2"/>
+    <text x="530" y="375" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e293b">2️⃣ Vector Search</text>
+    <text x="410" y="390" font-size="11" fill="#475569">Pinecone (Top-5 retrieval)</text>
+    
+    <!-- Step 3: Context Retrieval -->
+    <rect x="390" y="410" width="280" height="50" rx="8" fill="white" stroke="#1a659e" stroke-width="2"/>
+    <text x="530" y="440" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e293b">3️⃣ Context Retrieval</text>
+    <text x="410" y="455" font-size="11" fill="#475569">Extract text chunks + sources</text>
+    
+    <!-- Step 4: LLM Generation -->
+    <rect x="390" y="475" width="280" height="50" rx="8" fill="white" stroke="#1a659e" stroke-width="2"/>
+    <text x="530" y="505" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e293b">4️⃣ Answer Generation</text>
+    <text x="410" y="520" font-size="11" fill="#475569">Google Gemini 2.5 Flash</text>
+  </g>
+  
+  <!-- Arrow 3: To Vector DB -->
+  <path d="M 690 370 L 790 370" stroke="#1e293b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="700" y="360" font-size="12" fill="#475569">Vector Query</text>
+  
+  <!-- Vector Database -->
+  <g id="vector-db">
+    <rect x="790" y="310" width="180" height="120" rx="10" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="880" y="345" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🗄️ Vector DB</text>
+    <text x="880" y="370" font-size="14" text-anchor="middle" fill="white">Pinecone</text>
+    <text x="880" y="395" font-size="12" text-anchor="middle" fill="white">Index: rooman-kb</text>
+    <text x="880" y="415" font-size="11" text-anchor="middle" fill="white">768-dim vectors</text>
+  </g>
+  
+  <!-- Arrow 4: Return context -->
+  <path d="M 790 410 L 690 410" stroke="#1e293b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="700" y="430" font-size="12" fill="#475569">Retrieved Chunks</text>
+  
+  <!-- Arrow 5: To LLM -->
+  <path d="M 530 530 L 530 590" stroke="#1e293b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="545" y="565" font-size="12" fill="#475569">Context + Query</text>
+  
+  <!-- LLM Service -->
+  <g id="llm">
+    <rect x="430" y="590" width="200" height="100" rx="10" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="530" y="625" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🤖 LLM</text>
+    <text x="530" y="650" font-size="14" text-anchor="middle" fill="white">Google Gemini</text>
+    <text x="530" y="672" font-size="12" text-anchor="middle" fill="white">Model: gemini-2.5-flash</text>
+  </g>
+  
+  <!-- Arrow 6: Return answer -->
+  <path d="M 430 640 L 250 640 L 250 390" stroke="#1e293b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <text x="330" y="630" font-size="12" fill="#475569">Generated Answer</text>
+  
+  <!-- Knowledge Base (Data Source) -->
+  <g id="knowledge-base">
+    <rect x="790" y="530" width="180" height="160" rx="10" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="880" y="565" font-size="18" font-weight="bold" text-anchor="middle" fill="white">📚 Knowledge Base</text>
+    <text x="880" y="595" font-size="12" text-anchor="middle" fill="white">Rooman Documents:</text>
+    <text x="880" y="617" font-size="11" text-anchor="middle" fill="white">• Course catalogs</text>
+    <text x="880" y="637" font-size="11" text-anchor="middle" fill="white">• PMKVY programs</text>
+    <text x="880" y="657" font-size="11" text-anchor="middle" fill="white">• Certifications</text>
+    <text x="880" y="677" font-size="11" text-anchor="middle" fill="white">• Job programs</text>
+  </g>
+  
+  <!-- Ingestion Pipeline (dotted) -->
+  <path d="M 880 530 L 880 430" stroke="#d97706" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead-orange)"/>
+  <text x="900" y="480" font-size="11" fill="#92400e">Ingestion Pipeline</text>
+  <text x="900" y="495" font-size="10" fill="#92400e">(Offline Process)</text>
+  
+  <!-- Response Flow -->
+  <g id="response">
+    <rect x="50" y="450" width="200" height="100" rx="10" fill="#22c55e" stroke="#16a34a" stroke-width="2"/>
+    <text x="150" y="485" font-size="18" font-weight="bold" text-anchor="middle" fill="white">✅ Response</text>
+    <text x="150" y="515" font-size="12" text-anchor="middle" fill="white">• Answer text</text>
+    <text x="150" y="535" font-size="12" text-anchor="middle" fill="white">• Source citations</text>
+  </g>
+  
+  <!-- Tech Stack Box -->
+  <g id="tech-stack">
+    <rect x="50" y="730" width="920" height="140" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="510" y="760" font-size="20" font-weight="bold" text-anchor="middle" fill="#1e293b">🛠️ Technology Stack</text>
+    
+    <text x="80" y="795" font-size="14" font-weight="bold" fill="#475569">Frontend:</text>
+    <text x="80" y="815" font-size="12" fill="#64748b">• Streamlit 1.39.0</text>
+    
+    <text x="280" y="795" font-size="14" font-weight="bold" fill="#475569">Embeddings:</text>
+    <text x="280" y="815" font-size="12" fill="#64748b">• SentenceTransformers</text>
+    <text x="280" y="835" font-size="12" fill="#64748b">• all-mpnet-base-v2</text>
+    
+    <text x="500" y="795" font-size="14" font-weight="bold" fill="#475569">Vector DB:</text>
+    <text x="500" y="815" font-size="12" fill="#64748b">• Pinecone 5.3.1</text>
+    <text x="500" y="835" font-size="12" fill="#64748b">• Index: rooman-kb</text>
+    
+    <text x="700" y="795" font-size="14" font-weight="bold" fill="#475569">LLM:</text>
+    <text x="700" y="815" font-size="12" fill="#64748b">• Google Gemini</text>
+    <text x="700" y="835" font-size="12" fill="#64748b">• gemini-2.5-flash</text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1e293b"/>
+    </marker>
+    <marker id="arrowhead-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#d97706"/>
+    </marker>
+  </defs>
+</svg>
