@@ -1,0 +1,6 @@
+streamlit
+sentence-transformers
+pinecone-client
+google-generativeai
+torch
+transformers
