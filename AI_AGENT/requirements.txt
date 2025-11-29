@@ -1,6 +1,4 @@
-streamlit==1.39.0
-sentence-transformers==3.3.1
-pinecone==5.3.1
-google-generativeai==0.8.3
-torch==2.1.0
-transformers==4.36.0
+streamlit
+sentence-transformers
+pinecone
+google-generativeai
