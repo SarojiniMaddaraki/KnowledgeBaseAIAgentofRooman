@@ -1,7 +1,0 @@
-streamlit
-sentence-transformers
-pinecone
-google-generativeai
-torch
-transformers
-
