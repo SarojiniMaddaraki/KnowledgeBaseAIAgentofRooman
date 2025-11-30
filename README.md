@@ -107,9 +107,9 @@ pip install -r requirements.txt
 
 Edit `app.py` and replace with your API keys:
 ```python
-GEMINI_API_KEY = "your_gemini_api_key"
-PINECONE_API_KEY = "your_pinecone_api_key"
-INDEX_NAME = "your_index_name"
+GEMINI_API_KEY = "AIzaSyDfaZrIBQPiQX3k1LIULsru1no_FRh3XHA"
+PINECONE_API_KEY = "pcsk_58nZ62_UMekrnN77cyQzCL5Nm8R2dqxgpHATAKPyzpeCPeybqhYhKmUs6auMihQSKC239f"
+INDEX_NAME = "rooman-kb"
 ```
 
 ⚠️ **Security Note**: For production, use environment variables or `.env` file instead of hardcoding keys.
@@ -134,9 +134,7 @@ knowledgebaseaiagentofrooman/
 │   ├── ARCHITECTURE.md           # Detailed architecture docs
 │   └── README.md                 # This file
 ├── assets/
-│   ├── architecture-diagram.png  # Architecture visualization
-│   └── screenshots/              # UI screenshots
-├── .gitignore
+│   ├── architecture-diagram.png               
 └── README.md
 ```
 
@@ -315,8 +313,6 @@ This project is created for educational and demonstration purposes.
 
 For issues or questions:
 1. Check existing [GitHub Issues](https://github.com/SarojiniMaddaraki/knowledgebaseaiagentofrooman/issues)
-2. Create a new issue with detailed description
-3. Contact: your.email@example.com
 
 ---
 
